@@ -3,84 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart University Management System</title>
+    <title>City Design Project</title>
     <style>
         body {
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
         }
-        .algorithm-section {
-            margin: 20px 0;
+
+        h1, h2, h3 {
+            color: #FFC0CB; /* Baby Pink */
         }
-        .output {
-            background-color: #f4f4f4;
+
+        button {
+            background-color: #FFC0CB; /* Baby Pink */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #FFB6C1; /* Light Baby Pink */
+        }
+
+        pre {
+            background-color: #2C2C2C;
             padding: 10px;
-            border: 1px solid #ccc;
-            margin-top: 10px;
-            display: none;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .output {
+            margin-top: 20px;
         }
     </style>
-    <script>
-        function toggleOutput(id) {
-            const outputDiv = document.getElementById(id);
-            outputDiv.style.display = outputDiv.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
 </head>
 <body>
-    <h1>Smart University Management System</h1>
 
-    <div class="algorithm-section">
-        <h2>1. Emergency Evacuation System (BFS)</h2>
-        <p>Using Breadth-First Search (BFS) to plan the shortest exit routes from various locations in the university.</p>
-        <button onclick="toggleOutput('bfs-output')">Show/Hide Output</button>
-        <div id="bfs-output" class="output">
-            <pre>
-Emergency Evacuation System: Shortest Exit Routes
---------------------------------------------------
-From Classroom to Exit: 2 steps
-From Staffroom to Exit: 2 steps
-From Hostel to Exit: 2 steps
-From Cafeteria to Exit: 1 steps
-From Library to Exit: 1 steps
-            </pre>
-        </div>
+    <h1>CITY DESIGN PROJECT</h1>
+
+    <h2>SDGs Alignment</h2>
+    <h3>SDG 11: Sustainable Cities and Communities</h3>
+    <p>...</p> <!-- Add the content for SDG 11 -->
+
+    <h3>SDG 3: Good Health and Well-Being</h3>
+    <p>...</p> <!-- Add the content for SDG 3 -->
+
+    <h3>SDG 4: Quality Education</h3>
+    <p>...</p> <!-- Add the content for SDG 4 -->
+
+    <h3>SDG 10: Reduced Inequalities</h3>
+    <p>...</p> <!-- Add the content for SDG 10 -->
+
+    <h2>University Sector Algorithms</h2>
+
+    <h3>Emergency Evacuation Planning (Emergency Exit Routes)</h3>
+    <button onclick="showCode('evacuation')">Show Code</button>
+    <div id="evacuation" class="output" style="display: none;">
+        <pre>
+            #include <iostream>
+            #include <vector>
+            <br>...</pre>
     </div>
 
-    <div class="algorithm-section">
-        <h2>2. Hostel Room Allocation (Heap Sort)</h2>
-        <p>Using Heap Sort to efficiently allocate hostel rooms by sorting student IDs.</p>
-        <button onclick="toggleOutput('heap-sort-output')">Show/Hide Output</button>
-        <div id="heap-sort-output" class="output">
-            <pre>
-Unsorted Student IDs: 23 45 12 56 34 78 67 
-Sorted Student IDs: 12 23 34 45 56 67 78 
-            </pre>
-        </div>
+    <h3>Hostel Room Allocation</h3>
+    <button onclick="showCode('heapSort')">Show Code</button>
+    <div id="heapSort" class="output" style="display: none;">
+        <pre>
+            #include <iostream>
+            #include <vector>
+            <br>...</pre>
     </div>
 
-    <div class="algorithm-section">
-        <h2>3. Student Ranking System (Merge Sort)</h2>
-        <p>Using Merge Sort to rank students based on their CGPA in descending order.</p>
-        <button onclick="toggleOutput('merge-sort-output')">Show/Hide Output</button>
-        <div id="merge-sort-output" class="output">
-            <pre>
-Unsorted CGPA List:
-Alice: 8.5
-Bob: 9.2
-Charlie: 7.8
-Diana: 9.0
-Eve: 8.7
-
-Sorted CGPA List (Descending Order):
-Bob: 9.2
-Diana: 9.0
-Eve: 8.7
-Alice: 8.5
-Charlie: 7.8
-            </pre>
-        </div>
+    <h3>Student Ranking System</h3>
+    <button onclick="showCode('mergeSort')">Show Code</button>
+    <div id="mergeSort" class="output" style="display: none;">
+        <pre>
+            #include <iostream>
+            #include <vector>
+            <br>...</pre>
     </div>
+
+    <script>
+        function showCode(id) {
+            var output = document.getElementById(id);
+            if (output.style.display === "none") {
+                output.style.display = "block";
+            } else {
+                output.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
