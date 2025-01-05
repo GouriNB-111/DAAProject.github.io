@@ -87,7 +87,7 @@
             #include < climits >
             using namespace std;
 
-            void bfs(int start, vector<vector<int>> &graph, int exitNode, int n, vector<string> &locations) {
+            void bfs(int start, vector<vector < int >> &graph, int exitNode, int n, vector<string> &locations) {
                 vector<int> distance(n, INT_MAX);
                 queue<int> q;
 
@@ -116,7 +116,7 @@
 
             int main() {
                 int n = 6; // Number of nodes (locations)
-                vector<vector<int>> graph(n);
+                vector< vector< int > > graph(n);
                 graph[0].push_back(1); 
                 graph[0].push_back(2); 
 
@@ -188,7 +188,7 @@
             #include < vector >
             using namespace std;
 
-            void heapify(vector<int> &arr, int n, int i) {
+            void heapify(vector< int > &arr, int n, int i) {
                 int largest = i;      
                 int left = 2 * i + 1;  
                 int right = 2 * i + 2; 
@@ -205,7 +205,7 @@
                 }
             }
 
-            void heapSort(vector<int> &arr) {
+            void heapSort(vector< int > &arr) {
                 int n = arr.size();
 
                 for (int i = n / 2 - 1; i >= 0; i--)
@@ -265,12 +265,12 @@
             #include < vector >
             using namespace std;
 
-            void merge(vector<pair< string, double >> &students, int left, int mid, int right) {
+            void merge(vector< pair < string, double >> &students, int left, int mid, int right) {
                 int n1 = mid - left + 1;
                 int n2 = right - mid;
 
-                vector<pair<string, double>> leftArr(n1);
-                vector<pair<string, double>> rightArr(n2);
+                vector< pair< string, double >> leftArr(n1);
+                vector< pair< string, double >> rightArr(n2);
 
                 for (int i = 0; i < n1; i++)
                     leftArr[i] = students[left + i];
@@ -303,7 +303,7 @@
                 }
             }
 
-            void mergeSort(vector<pair<string, double>> &students, int left, int right) {
+            void mergeSort(vector< pair< string, double >> &students, int left, int right) {
                 if (left < right) {
                     int mid = left + (right - left) / 2;
 
@@ -315,7 +315,7 @@
             }
 
             int main() {
-                vector<pair<string, double>> students = {{"Alice", 3.8}, {"Bob", 3.5}, {"Charlie", 3.9}, {"David", 3.7}, {"Eve", 3.6}};
+                vector< pair< string, double >> students = {{"Alice", 3.8}, {"Bob", 3.5}, {"Charlie", 3.9}, {"David", 3.7}, {"Eve", 3.6}};
 
                 cout << "Unsorted Student CGPAs:\n";
                 for (auto &student : students)
