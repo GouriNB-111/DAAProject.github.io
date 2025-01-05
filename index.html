@@ -46,16 +46,16 @@
 
     <h2>SDGs Alignment</h2>
     <h3>SDG 11: Sustainable Cities and Communities</h3>
-    <p>...</p> <!-- Add the content for SDG 11 -->
+    <p>Focuses on making cities inclusive, safe, resilient, and sustainable. Emphasizes efficient urban planning, disaster preparedness, and access to safe housing and transportation. In the context of the project: Ensures effective emergency evacuation planning and infrastructure safety.</p>
 
     <h3>SDG 3: Good Health and Well-Being</h3>
-    <p>...</p> <!-- Add the content for SDG 3 -->
+    <p>Aims to ensure healthy lives and promote well-being for people of all ages. Highlights reducing health risks, emergency response, and access to quality health systems. In the context of the project: Promotes safety during emergencies, reducing injuries and fatalities through planned evacuation.</p>
 
     <h3>SDG 4: Quality Education</h3>
-    <p>...</p> <!-- Add the content for SDG 4 -->
+    <p>Ensures inclusive and equitable quality education and promotes lifelong learning opportunities for all. Focuses on equitable access, quality learning environments, and student success. In the context of the project: Enhances fairness in student ranking and allocation systems, supporting academic excellence.</p>
 
     <h3>SDG 10: Reduced Inequalities</h3>
-    <p>...</p> <!-- Add the content for SDG 10 -->
+    <p>Works to reduce inequalities within and among countries by promoting equitable access and opportunity. Emphasizes fairness in distribution of resources and services. In the context of the project: Fair allocation of hostel rooms ensures equal opportunity for all students, regardless of background.</p>
 
     <h2>University Sector Algorithms</h2>
 
@@ -65,25 +65,228 @@
         <pre>
             #include <iostream>
             #include <vector>
-            <br>...</pre>
+            #include <queue>
+            #include <climits>
+            using namespace std;
+
+            void bfs(int start, vector<vector<int>> &graph, int exitNode, int n, vector<string> &locations) {
+                vector<int> distance(n, INT_MAX);
+                queue<int> q;
+
+                distance[start] = 0;
+                q.push(start);
+
+                while (!q.empty()) {
+                    int current = q.front();
+                    q.pop();
+
+                    for (int neighbor : graph[current]) {
+                        if (distance[neighbor] == INT_MAX) {
+                            distance[neighbor] = distance[current] + 1;
+                            q.push(neighbor);
+                        }
+                    }
+                }
+
+                cout << "From " << locations[start] << " to " << locations[exitNode] << ": ";
+                if (distance[exitNode] == INT_MAX) {
+                    cout << "No route available.\n";
+                } else {
+                    cout << distance[exitNode] << " steps\n";
+                }
+            }
+
+            int main() {
+                int n = 6; // Number of nodes (locations)
+                vector<vector<int>> graph(n);
+                graph[0].push_back(1); 
+                graph[0].push_back(2); 
+
+                graph[1].push_back(0); 
+                graph[1].push_back(3); 
+
+                graph[2].push_back(0); 
+                graph[2].push_back(3); 
+                graph[2].push_back(4); 
+
+                graph[3].push_back(1); 
+                graph[3].push_back(2); 
+                graph[3].push_back(5); 
+
+                graph[4].push_back(2); 
+                graph[4].push_back(5); 
+
+                graph[5].push_back(3); 
+                graph[5].push_back(4); 
+
+                vector<string> locations = {"Classroom", "Staffroom", "Hostel", "Cafeteria", "Library", "Exit"};
+                int exitNode = 5;
+
+                cout << "Emergency Evacuation System: Shortest Exit Routes\n";
+                cout << "--------------------------------------------------\n";
+
+                for (int i = 0; i < n; i++) {
+                    if (i != exitNode) { 
+                        bfs(i, graph, exitNode, n, locations);
+                    }
+                }
+
+                return 0;
+            }  
+        </pre>
+        <p>Emergency Evacuation System: Shortest Exit Routes</p>
+        <p>--------------------------------------------------</p>
+        <p>From Classroom to Exit: 2 steps</p>
+        <p>From Staffroom to Exit: 2 steps</p>
+        <p>From Hostel to Exit: 2 steps</p>
+        <p>From Cafeteria to Exit: 1 steps</p>
+        <p>From Library to Exit: 1 steps</p>
     </div>
 
-    <h3>Hostel Room Allocation</h3>
+    <h3>Hostel Room Allocation (Allocating Hostel Rooms to Students)</h3>
     <button onclick="showCode('heapSort')">Show Code</button>
     <div id="heapSort" class="output" style="display: none;">
         <pre>
             #include <iostream>
             #include <vector>
-            <br>...</pre>
+            using namespace std;
+
+            void heapify(vector<int> &arr, int n, int i) {
+                int largest = i;      
+                int left = 2 * i + 1;  
+                int right = 2 * i + 2; 
+
+                if (left < n && arr[left] > arr[largest])
+                    largest = left;
+
+                if (right < n && arr[right] > arr[largest])
+                    largest = right;
+
+                if (largest != i) {
+                    swap(arr[i], arr[largest]);
+                    heapify(arr, n, largest);
+                }
+            }
+
+            void heapSort(vector<int> &arr) {
+                int n = arr.size();
+
+                for (int i = n / 2 - 1; i >= 0; i--)
+                    heapify(arr, n, i);
+
+                for (int i = n - 1; i >= 0; i--) {
+                    swap(arr[0], arr[i]);
+                    heapify(arr, i, 0);
+                }
+            }
+
+            int main() {
+                vector<int> studentIDs = {23, 45, 12, 56, 34, 78, 67};
+
+                cout << "Unsorted Student IDs: ";
+                for (int id : studentIDs)
+                    cout << id << " ";
+                cout << endl;
+
+                heapSort(studentIDs);
+
+                cout << "Sorted Student IDs: ";
+                for (int id : studentIDs)
+                    cout << id << " ";
+                cout << endl;
+
+                return 0;
+            }  
+        </pre>
+        <p>Unsorted Student IDs: 23 45 12 56 34 78 67</p>
+        <p>Sorted Student IDs: 12 23 34 45 56 67 78</p>
     </div>
 
-    <h3>Student Ranking System</h3>
+    <h3>Student Ranking System (Based on CGPA)</h3>
     <button onclick="showCode('mergeSort')">Show Code</button>
     <div id="mergeSort" class="output" style="display: none;">
         <pre>
             #include <iostream>
             #include <vector>
-            <br>...</pre>
+            using namespace std;
+
+            void merge(vector<pair<string, double>> &students, int left, int mid, int right) {
+                int n1 = mid - left + 1;
+                int n2 = right - mid;
+
+                vector<pair<string, double>> leftArr(n1);
+                vector<pair<string, double>> rightArr(n2);
+
+                for (int i = 0; i < n1; i++)
+                    leftArr[i] = students[left + i];
+                for (int i = 0; i < n2; i++)
+                    rightArr[i] = students[mid + 1 + i];
+
+                int i = 0, j = 0, k = left;
+
+                while (i < n1 && j < n2) {
+                    if (leftArr[i].second >= rightArr[j].second) { 
+                        students[k] = leftArr[i];
+                        i++;
+                    } else {
+                        students[k] = rightArr[j];
+                        j++;
+                    }
+                    k++;
+                }
+
+                while (i < n1) {
+                    students[k] = leftArr[i];
+                    i++;
+                    k++;
+                }
+
+                while (j < n2) {
+                    students[k] = rightArr[j];
+                    j++;
+                    k++;
+                }
+            }
+
+            void mergeSort(vector<pair<string, double>> &students, int left, int right) {
+                if (left < right) {
+                    int mid = left + (right - left) / 2;
+
+                    mergeSort(students, left, mid);
+                    mergeSort(students, mid + 1, right);
+
+                    merge(students, left, mid, right);
+                }
+            }
+
+            int main() {
+                vector<pair<string, double>> students = {{"Alice", 8.5}, {"Bob", 9.2}, {"Charlie", 7.8}, {"Diana", 9.0}, {"Eve", 8.7}};
+
+                cout << "Unsorted CGPA List:\n";
+                for (auto &student : students)
+                    cout << student.first << ": " << student.second << "\n";
+
+                mergeSort(students, 0, students.size() - 1);
+
+                cout << "\nSorted CGPA List (Descending Order):\n";
+                for (auto &student : students)
+                    cout << student.first << ": " << student.second << "\n";
+
+                return 0;
+            }  
+        </pre>
+        <p>Unsorted CGPA List:</p>
+        <p>Alice: 8.5</p>
+        <p>Bob: 9.2</p>
+        <p>Charlie: 7.8</p>
+        <p>Diana: 9.0</p>
+        <p>Eve: 8.7</p>
+        <p>Sorted CGPA List (Descending Order):</p>
+        <p>Bob: 9.2</p>
+        <p>Diana: 9.0</p>
+        <p>Eve: 8.7</p>
+        <p>Alice: 8.5</p>
+        <p>Charlie: 7.8</p>
     </div>
 
     <script>
