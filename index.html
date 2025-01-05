@@ -49,7 +49,7 @@
     <p>Focuses on making cities inclusive, safe, resilient, and sustainable. Emphasizes efficient urban planning, disaster preparedness, and access to safe housing and transportation. In the context of the project: Ensures effective emergency evacuation planning and infrastructure safety.</p>
 
     <h3>SDG 3: Good Health and Well-Being</h3>
-    <p>Aims to ensure healthy lives and promote well-being for people of all ages. Highlights reducing health risks, emergency response, and access to quality health systems. In the context of the project: Promotes safety during emergencies, reducing injuries and fatalities through planned evacuation.</p>
+ <p>Aims to ensure healthy lives and promote well-being for people of all ages. Highlights reducing health risks, emergency response, and access to quality health systems. In the context of the project: Promotes safety during emergencies, reducing injuries and fatalities through planned evacuation.</p>
 
     <h3>SDG 4: Quality Education</h3>
     <p>Ensures inclusive and equitable quality education and promotes lifelong learning opportunities for all. Focuses on equitable access, quality learning environments, and student success. In the context of the project: Enhances fairness in student ranking and allocation systems, supporting academic excellence.</p>
@@ -60,23 +60,23 @@
     <h2>University Sector Algorithms</h2>
 
     <h3>Emergency Evacuation Planning (Emergency Exit Routes)</h3>
-    <p>Emergency Evacuation Planning (Emergency Exit Routes) 
+    <p>
        - Solution: BFS (Breadth-First Search)  
     </p>
-    <p>Why BFS?  
-      - BFS is a graph traversal algorithm that explores all the nodes at the current depth level before moving on to nodes at the next level. It is particularly effective for finding the shortest path in an unweighted graph because it systematically visits all possible paths level by level.  
-      - For emergency evacuation planning, BFS ensures the shortest and safest routes to exits are identified quickly. In an emergency, reducing time spent evacuating can save lives, making BFS an ideal choice for mapping exit routes.  
+    <p>Why BFS? </p>
+    <p>- BFS is a graph traversal algorithm that explores all the nodes at the current depth level before moving on to nodes at the next level. It is particularly effective for finding the shortest path in an unweighted graph because it systematically visits all possible paths level by level.</p>
+    <p> - For emergency evacuation planning, BFS ensures the shortest and safest routes to exits are identified quickly. In an emergency, reducing time spent evacuating can save lives, making BFS an ideal choice for mapping exit routes.  
     </p>
-    <p>How does it work?  
-      - Represent the university layout (rooms, hallways, exits) as a graph where nodes are locations and edges are paths.  
-      - Start from the source node (emergency location) and use a queue to track nodes to visit.  
-      - Visit all neighboring nodes of the current node, marking them as visited, and enqueue them for further exploration.  
-      - Repeat until all nodes are explored or the desired exit is found.  
+    <p>How does it work? </p> 
+    <p>  - Represent the university layout (rooms, hallways, exits) as a graph where nodes are locations and edges are paths.</p>
+    <p>  - Start from the source node (emergency location) and use a queue to track nodes to visit.  </p>
+    <p>  - Visit all neighboring nodes of the current node, marking them as visited, and enqueue them for further exploration.  </p>
+   <p>  - Repeat until all nodes are explored or the desired exit is found.  
     </p>
-    <p>Benefits:  
-      - Finds the shortest path in an unweighted graph, ensuring efficient evacuation.  
-      - Works in real-time scenarios with predictable time complexity \(O(V + E)\), where \(V\) is vertices and \(E\) is edges.  
-      - Adapts to different layouts and ensures robust planning.  
+    <p>Benefits:</p>
+     <p> - Finds the shortest path in an unweighted graph, ensuring efficient evacuation.</p>
+      <p>- Works in real-time scenarios with predictable time complexity \(O(V + E)\), where \(V\) is vertices and \(E\) is edges.</p>  
+     <p> - Adapts to different layouts and ensures robust planning.  
     </p>
     <button onclick="showCode('evacuation')">Show Code</button>
     <div id="evacuation" class="output" style="display: none;">
@@ -162,24 +162,24 @@
     </div>
 
     <h3>Hostel Room Allocation (Allocating Hostel Rooms to Students)</h3>
-    <p>Hostel Room Allocation (Allocating Hostel Rooms to Students)  
-       - Solution: Heap Sort  
+    <p> 
+    - Solution: Heap Sort  
     </p>
-    <p>Why Heap Sort?  
-       - Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. A binary heap allows efficient extraction of the smallest or largest element, which is central to sorting and prioritization tasks.  
-       - In hostel room allocation, students might be sorted based on predefined priorities (e.g., seniority, merit, or distance). Heap Sort ensures an efficient and organized sorting of these priorities to facilitate fair room allocation.  
-       - Its in-place nature (doesn’t need extra storage) and \(O(n \log n)\) performance make it suitable for large datasets of student requests.  
+    <p>Why Heap Sort?</p>
+     <p> - Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. A binary heap allows efficient extraction of the smallest or largest element, which is central to sorting and prioritization tasks.</p>  
+     <p>- In hostel room allocation, students might be sorted based on predefined priorities (e.g., seniority, merit, or distance). Heap Sort ensures an efficient and organized sorting of these priorities to facilitate fair room allocation.</p>  
+    <p>- Its in-place nature (doesn’t need extra storage) and \(O(n \log n)\) performance make it suitable for large datasets of student requests.  
     </p>
-    <p>How does it work?  
-       - Build a max-heap (or min-heap) from the list of students based on their priority criteria.  
-       - Repeatedly extract the maximum (or minimum) element from the heap and place it at the end of the list.  
-       - Reheapify the remaining elements to maintain the heap structure.  
-       - Continue until all elements are sorted.  
+    <p>How does it work?</p> 
+       <p>- Build a max-heap (or min-heap) from the list of students based on their priority criteria.</p>  
+     <p> - Repeatedly extract the maximum (or minimum) element from the heap and place it at the end of the list.</p> 
+      <p> - Reheapify the remaining elements to maintain the heap structure.</p>  
+      <p> - Continue until all elements are sorted.  
     </p>
-    <p>Benefits:  
-       - Efficient sorting ensures fair allocation of rooms.  
-       - Handles large datasets effectively with guaranteed time complexity of \(O(n \log n)\).  
-       - Works well in scenarios where prioritization is a key concern.  
+    <p>Benefits:</p>  
+      <p> - Efficient sorting ensures fair allocation of rooms.</p>  
+       <p>- Handles large datasets effectively with guaranteed time complexity of \(O(n \log n)\). </p> 
+      <p> - Works well in scenarios where prioritization is a key concern.  
     </p>
     <button onclick="showCode('heapSort')">Show Code</button>
     <div id="heapSort" class="output" style="display: none;">
@@ -240,23 +240,23 @@
     </div>
 
     <h3>Student Ranking System (Based on CGPA)</h3>
-    <p>Student Ranking System (Based on CGPA)  
+    <p>
        - Solution: Merge Sort  
     </p>
-    <p>Why Merge Sort?  
-       - Merge Sort is a stable, divide-and-conquer sorting algorithm that breaks down the input into smaller subarrays, sorts them, and merges them back into a single sorted array.  
-       - For student rankings, it is crucial to maintain stability—students with the same CGPA retain their original order, ensuring fairness. Merge Sort handles this effectively.  
-       - Its predictable \(O(n \log n)\) performance makes it suitable for ranking large datasets, where accuracy and efficiency are critical.  
+    <p>Why Merge Sort?</p>  
+      <p> - Merge Sort is a stable, divide-and-conquer sorting algorithm that breaks down the input into smaller subarrays, sorts them, and merges them back into a single sorted array.</p>  
+      <p> - For student rankings, it is crucial to maintain stability—students with the same CGPA retain their original order, ensuring fairness. Merge Sort handles this effectively.</p>  
+      <p> - Its predictable \(O(n \log n)\) performance makes it suitable for ranking large datasets, where accuracy and efficiency are critical.  
     </p>
-    <p>How does it work?  
-       - Divide the array of student CGPAs into two halves until each subarray contains a single element.  
-       - Recursively sort and merge the subarrays by comparing elements from both halves and inserting the smaller element into the final array.  
-       - Continue until all elements are merged into a fully sorted array.  
+    <p>How does it work? </p> 
+      <p> - Divide the array of student CGPAs into two halves until each subarray contains a single element.</p> 
+      <p> - Recursively sort and merge the subarrays by comparing elements from both halves and inserting the smaller element into the final array.</p>
+       <p>- Continue until all elements are merged into a fully sorted array.  
     </p>
-    <p>Benefits:  
-       - Stable sorting ensures fairness in rankings.  
-       - Efficiently handles large datasets with consistent time complexity \(O(n \log n)\).  
-       - Guarantees accurate and reliable ranking results.  
+    <p>Benefits: </p> 
+      <p> - Stable sorting ensures fairness in rankings.</p>  
+      <p> - Efficiently handles large datasets with consistent time complexity \(O(n \log n)\).</p> 
+      <p> - Guarantees accurate and reliable ranking results.  
     </p>
     <button onclick="showCode('mergeSort')">Show Code</button>
     <div id="mergeSort" class="output" style="display: none;">
@@ -356,3 +356,5 @@
     </script>
 
 </body>
+
+
